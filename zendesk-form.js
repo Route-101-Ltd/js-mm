@@ -1,26 +1,6 @@
-function waitForElm(selector) {
-        return new Promise(function (resolve) {
-            if (document.querySelector(selector)) {
-            return resolve(document.querySelector(selector));
-            }
-
-            var observer = new MutationObserver(function (mutations) {
-            if (document.querySelector("#formDisplay")) {
-                resolve(document.querySelector("#formDisplay"));
-                observer.disconnect();
-            }
-            });
-            observer.observe(document.body, {
-            childList: true,
-            subtree: true
-            });
-        });
-    }
-
-    waitForElm("#formDisplay").then(function (elm) {
-        console.log("form ready to load");
-        loadElementForm();
-    });
+window.addEventListener('load', function(e) {
+    loadElementForm()
+})
     
     function loadElementForm() {
     
