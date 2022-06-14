@@ -1,5 +1,4 @@
-
-    function waitForElm(selector) {
+function waitForElm(selector) {
         return new Promise(function (resolve) {
             if (document.querySelector(selector)) {
             return resolve(document.querySelector(selector));
